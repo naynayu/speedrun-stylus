@@ -1,5 +1,7 @@
 # 🚩 Challenge #0: 🎟 Simple Counter Example
 
+![Hero Image](images/Screenshot%202026-02-05%20at%2021.30.57.png)
+
 🎫 Create a simple Counter:
 
 👷‍♀️ You'll compile and deploy your first smart contracts. Then, you'll use a template React app full of important components and hooks. Finally, you'll deploy a Counter contract written in RUST to a public network to share with friends! 🚀
