@@ -12,6 +12,7 @@ The Next.js server crashes immediately upon start or reload with:
 TypeError: invalid private key (argument="privateKey", value="[REDACTED]", code=INVALID_ARGUMENT)
 🧐 The Cause
 The frontend attempts to initialize a server-side wallet using process.env.NEXT_PUBLIC_PRIVATE_KEY, but the environment variable is missing or empty. This often happens because .env files are not checked into git, or the variable wasn't set locally.
+
 🟢 The Fix
 Create or update the .env.local file in packages/nextjs/ to include the Arbitrum Nitro Dev Node Rich Account key.
 
@@ -21,14 +22,12 @@ Bash
 NEXT_PUBLIC_RPC_URL=[http://127.0.0.1:8547](http://127.0.0.1:8547)
 # The standard "Rich Account" private key for local Nitro nodes
 NEXT_PUBLIC_PRIVATE_KEY=0xb6b15c8cb491557369f3c7d2c287b053eb229daa9c22138887752191c9520659
-
 2. Transaction Failed: "Insufficient Funds"
 🔴 The Error
 When clicking a button to interact with the contract (e.g., "Increment"), the UI shows:
 
 Plaintext
 Error: server returned an error response: error code -32000: insufficient funds for gas * price + value
-
 🧐 The Cause
 Scaffold-ETH 2 generates a unique "Burner Wallet" for the browser session. By default, this wallet has 0 ETH. Even on a local testnet, transactions require gas fees.
 
